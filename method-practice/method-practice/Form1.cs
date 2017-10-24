@@ -93,6 +93,13 @@ namespace method_practice
                 outputText11 += q11Output[i] + " ";
             }
             Console.WriteLine("Q11: " + outputText11);
+
+            // Q12
+            int[] nums = { 4, 3, 7, 2, 8, 9 };
+            int[] q12Output = GetMiddleNumbers(nums);
+            Console.WriteLine(String.Format("Q12: {0} {1}", q12Output[0], q12Output[1]));
+
+          
         }
 
         // Q1
@@ -239,6 +246,16 @@ namespace method_practice
             }
 
             return nums;
+        }
+
+        // Q12
+        private int[] GetMiddleNumbers(int[] numbers)
+        {
+            int[] output = new int[2];      // we know for sure we will return an array of size 2
+            output[0] = numbers[numbers.Length / 2 - 1];
+            output[1] = numbers[numbers.Length / 2];
+                 
+            return output;
         }
     }
 }
