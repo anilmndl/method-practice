@@ -73,7 +73,26 @@ namespace method_practice
             {
                 outputText9 += q9Output[i] + " ";
             }
-            Console.WriteLine("Q8: " + outputText9);
+            Console.WriteLine("Q9: " + outputText9);
+
+
+            // Q10
+            char[] q10Output = ReverseChars(charArr);
+            string outputText10 = "";
+            for (int i = 0; i < q10Output.Length; i++)
+            {
+                outputText10 += q10Output[i] + " ";
+            }
+            Console.WriteLine("Q10: " + outputText10);
+
+            // Q11
+            int[] q11Output = ReplaceWithMax(intArr);
+            string outputText11 = "";
+            for (int i = 0; i < q11Output.Length; i++)
+            {
+                outputText11 += q11Output[i] + " ";
+            }
+            Console.WriteLine("Q11: " + outputText11);
         }
 
         // Q1
@@ -183,6 +202,43 @@ namespace method_practice
                 output[i] = (int)numbers[i];
             }
             return output;
+        }
+
+        // Q10
+        private char[] ReverseChars(char[] characters)
+        {
+            char[] output = new char[characters.Length];
+            for(int i = 0; i < characters.Length; i++)
+            {
+                output[i] = characters[characters.Length - i - 1];
+            }
+
+            return output;
+        }
+
+        // Q11
+        private int[] ReplaceWithMax(int[] nums)
+        {
+            // this is a two step process 
+
+            // first, find the max value in the given array of ints
+            int max = nums[0];
+            for(int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] > max)
+                {
+                    max = nums[i];
+                }
+            }
+
+            // we would have the max by now
+            // replace each item in the array with the max value
+            for (int i = 0; i < nums.Length; i++)
+            {
+                nums[i] = max;
+            }
+
+            return nums;
         }
     }
 }
