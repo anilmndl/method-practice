@@ -40,6 +40,11 @@ namespace method_practice
             int[] intB = { 3, 7, 1 };
             bool q4Output = SameFirstLast(intA, intB);
             Console.WriteLine("Q4: " + q4Output.ToString());
+
+            // Q5
+            double[] doubleNums = { 10.52, 78.58, 68.45, 75.25 };
+            double q5Output = GetSum(doubleNums);
+            Console.WriteLine("Q5: " + q5Output.ToString());
         }
 
         // Q1
@@ -77,6 +82,17 @@ namespace method_practice
                 return true;
             }
             return false;
+        }
+
+        //Q5
+        private double GetSum(double[] numbers)
+        {
+            double output = 0.0;
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                output += numbers[i];
+            }
+            return output;
         }
     }
 }
