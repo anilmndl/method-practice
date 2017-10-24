@@ -45,6 +45,11 @@ namespace method_practice
             double[] doubleNums = { 10.52, 78.58, 68.45, 75.25 };
             double q5Output = GetSum(doubleNums);
             Console.WriteLine("Q5: " + q5Output.ToString());
+
+            // Q6
+            char[] charArr = { 'a', 'e', 'i', 'o', 'u' };
+            int q6Output = GetLength(charArr);
+            Console.WriteLine("Q6: " + q6Output.ToString());
         }
 
         // Q1
@@ -93,6 +98,16 @@ namespace method_practice
                 output += numbers[i];
             }
             return output;
+        }
+
+        private int GetLength(char[] characters)
+        {
+            int count = 0;
+            for (int i = 0; i < characters.Length; i++)
+            {
+                count++;
+            }
+            return count;
         }
     }
 }
