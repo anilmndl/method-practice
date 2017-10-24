@@ -50,6 +50,11 @@ namespace method_practice
             char[] charArr = { 'a', 'e', 'i', 'o', 'u' };
             int q6Output = GetLength(charArr);
             Console.WriteLine("Q6: " + q6Output.ToString());
+
+            // Q7
+            int[] intArr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
+            int q7Output = CountFizzBuzz(intArr);
+            Console.WriteLine("Q7: " + q7Output.ToString());
         }
 
         // Q1
@@ -99,13 +104,29 @@ namespace method_practice
             }
             return output;
         }
-
+        
+        // Q6
         private int GetLength(char[] characters)
         {
             int count = 0;
             for (int i = 0; i < characters.Length; i++)
             {
                 count++;
+            }
+            return count;
+        }
+
+        // Q7
+        private int CountFizzBuzz(int[] numbers)
+        {
+            int count = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 3 == 0 ^ numbers[i] % 5 == 0)
+                {
+                    count++;
+                }
+                
             }
             return count;
         }
