@@ -58,12 +58,22 @@ namespace method_practice
 
             // Q8
             int[] q8Output = GetFizzBuzz(intArr);
-            string outputText = "";
+            string outputText8 = "";
             for(int i = 0; i < q8Output.Length; i++)
             {
-                outputText += q8Output[i] + " ";
+                outputText8 += q8Output[i] + " ";
             }
-            Console.WriteLine("Q8: " + outputText);
+            Console.WriteLine("Q8: " + outputText8);
+
+
+            // Q9
+            int[] q9Output = ConvertToInt(doubleNums);
+            string outputText9 = "";
+            for (int i = 0; i < q9Output.Length; i++)
+            {
+                outputText9 += q9Output[i] + " ";
+            }
+            Console.WriteLine("Q8: " + outputText9);
         }
 
         // Q1
@@ -161,6 +171,17 @@ namespace method_practice
                 }
             }
 
+            return output;
+        }
+
+        // Q9
+        private int[] ConvertToInt(double[] numbers)
+        {
+            int[] output = new int[numbers.Length];
+            for(int i = 0; i < numbers.Length; i++)
+            {
+                output[i] = (int)numbers[i];
+            }
             return output;
         }
     }
