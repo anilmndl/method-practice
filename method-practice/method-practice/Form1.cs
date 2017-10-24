@@ -55,6 +55,15 @@ namespace method_practice
             int[] intArr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 };
             int q7Output = CountFizzBuzz(intArr);
             Console.WriteLine("Q7: " + q7Output.ToString());
+
+            // Q8
+            int[] q8Output = GetFizzBuzz(intArr);
+            string outputText = "";
+            for(int i = 0; i < q8Output.Length; i++)
+            {
+                outputText += q8Output[i] + " ";
+            }
+            Console.WriteLine("Q8: " + outputText);
         }
 
         // Q1
@@ -129,6 +138,30 @@ namespace method_practice
                 
             }
             return count;
+        }
+
+        // Q8
+        private int[] GetFizzBuzz(int[] numbers)
+        {
+            // we do not know how big the new array size will be
+            // since we wrote a method to count the numbers matching the criteria
+            // we can leverage that method to get our array size
+            int arrSize = CountFizzBuzz(numbers);
+
+            int[] output = new int[arrSize];        // initialize the array of proper size
+            int outputIndex = 0;                    // we need an int variable to keep track of this index
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                // if criteria matches, add it out the output array
+                if (numbers[i] % 3 == 0 ^ numbers[i] % 5 == 0)
+                {
+                    output[outputIndex] = numbers[i];
+                    outputIndex++;
+                }
+            }
+
+            return output;
         }
     }
 }
