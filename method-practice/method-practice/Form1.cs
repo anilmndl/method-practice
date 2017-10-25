@@ -109,6 +109,9 @@ namespace method_practice
             }
             Console.WriteLine("Q13: " + outputText13);
 
+            //Q4
+            bool q14Output = DoesNotHaveTriple(new int[] { 2, 5, 7, 8, 8, 8 });
+            Console.WriteLine("Q14: " + q14Output);
 
         }
 
@@ -276,6 +279,19 @@ namespace method_practice
             nums[nums.Length - 1] = temp;
 
             return nums;
+        }
+
+        //Q14
+        private bool DoesNotHaveTriple(int[] nums)
+        {
+            for(int i = 0; i < nums.Length - 2; i++)
+            {
+                if (nums[i] == nums[i + 1] && nums[i+1] == nums[i+2])
+                {
+                    return false;
+                }
+            }
+            return true;
         }
     }
 }
