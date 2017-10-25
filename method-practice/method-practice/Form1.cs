@@ -113,6 +113,11 @@ namespace method_practice
             bool q14Output = DoesNotHaveTriple(new int[] { 2, 5, 7, 8, 8, 8 });
             Console.WriteLine("Q14: " + q14Output);
 
+            // Q5
+            string isu = "Idaho State University";
+            string q15Output = ReverseString(isu);
+            Console.WriteLine(q15Output);
+
         }
 
         // Q1
@@ -292,6 +297,17 @@ namespace method_practice
                 }
             }
             return true;
+        }
+
+        // Q15
+        private string ReverseString(string word)
+        {
+            string reversedWord = "";
+            for(int i = 0; i < word.Length; i++)
+            {
+                reversedWord += word[word.Length - i - 1];
+            }
+            return reversedWord;
         }
     }
 }
