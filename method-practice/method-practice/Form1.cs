@@ -99,7 +99,17 @@ namespace method_practice
             int[] q12Output = GetMiddleNumbers(nums);
             Console.WriteLine(String.Format("Q12: {0} {1}", q12Output[0], q12Output[1]));
 
-          
+
+            // Q13
+            int[] q13Output = SwapFirstLast(nums);
+            string outputText13 = "";
+            for (int i = 0; i < q13Output.Length; i++)
+            {
+                outputText13 += q13Output[i] + " ";
+            }
+            Console.WriteLine("Q13: " + outputText13);
+
+
         }
 
         // Q1
@@ -256,6 +266,16 @@ namespace method_practice
             output[1] = numbers[numbers.Length / 2];
                  
             return output;
+        }
+
+        // Q13
+        private int[] SwapFirstLast(int[] nums)
+        {
+            int temp = nums[0];
+            nums[0] = nums[nums.Length - 1];
+            nums[nums.Length - 1] = temp;
+
+            return nums;
         }
     }
 }
